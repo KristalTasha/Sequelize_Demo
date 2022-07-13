@@ -1,8 +1,9 @@
 const { Sequelize } = require('sequelize')
 
-const connect = new Sequelize(process.env.DBNAME, process.env.USERNAME, process.env.PASSWORD, {
+module.exports.connect = new Sequelize(process.env.DBNAME, process.env.USERNAME, process.env.PASSWORD, {
     host: '127.0.0.1',
     dialect: 'mysql'
+    //how sequelize logs to the console
+    // logging: (...msg) => console.log(msg)
 })
 
-module.exports = connect
